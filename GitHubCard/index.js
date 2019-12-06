@@ -74,7 +74,7 @@ const followersArray = [
   'getify',
   'debauchery1st',
   'hiterharris',
-  'Bannanaste',
+  'Banbanaste',
   'anamonteiro430'
 ];
 
@@ -156,18 +156,18 @@ function createCard(gitUser) { // here its the function
   infoBody.appendChild(userFollowing);
   infoBody.appendChild(userBio);
 
-  userProfile.appendChild(profileLink);
+  userProfile.append(profileLink);
 
   //add text Content
   userImg.src = gitUser.avatar_url;
   userName.textContent = gitUser.name;
   gitName.textContent = gitUser.login;
   userLocation.textContent = `Location: ${gitUser.location}`;
-  userProfile.textContent = 'Profile:';
-  //profileLink.attribute = gitUser.html_url;
+  //userProfile.textContent = "Profile:";
+  profileLink.href = `Profile: ${gitUser.html_url}`;
   profileLink.textContent = gitUser.html_url;
-  userFollowers.textContent = `followers: ${gitUser.followers}`;
-  userFollowing.textContent = `following: ${gitUser.following}`;
+  userFollowers.textContent = `Followers: ${gitUser.followers}`;
+  userFollowing.textContent = `Following: ${gitUser.following}`;
   userBio.textContent = `Bio: ${gitUser.bio}`; 
 
   return cardBody;
